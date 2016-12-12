@@ -29,12 +29,12 @@ public class TaxCalculator {
 	public ArrayList<Goods> readIn(String fileName){
 		
 		//Used input stream so that file is treated as a classpath stream
-		InputStream in = this.getClass().getClassLoader().getResourceAsStream(fileName);
+		InputStream in = this.getClass().getClassLoader().getResourceAsStream(fileName + ".txt");
 		
 		//File needs to be error handled, so if for some reason an error occurs
 		Scanner scan = null;
 		try{
-			scan = new Scanner(new File(fileName));
+			scan = new Scanner(new File(fileName + ".txt"));
 		}catch (FileNotFoundException e){
 			System.err.println("The was a problem reading the file");
 		}
